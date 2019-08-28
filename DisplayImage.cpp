@@ -4,7 +4,7 @@
 using namespace cv;
 
 int main(int argc, char** argv) {
-    cv::Mat image = cv::imread("image.jpeg", CV_LOAD_IMAGE_COLOR);
+    cv::Mat image = cv::imread("imagen.png", CV_LOAD_IMAGE_COLOR);
 	cv::Mat dst;
     if(!image.data) {
         std::cout << "Error: no se cargo la imagen." << std::endl;
