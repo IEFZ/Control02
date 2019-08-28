@@ -9,7 +9,7 @@ Ir a terminal linux y ejecutar los siguientes comandos
 # mkdir displayImage
 # cd displayImage
 
-crear un archivo llamado CMakeLits.txt y agregar lo siguiente
+crear un archivo llamado CMakeLists.txt y agregar lo siguiente
 
 # cmake_minimum_required(VERSION 2.8)
 # project( DisplayImage )
