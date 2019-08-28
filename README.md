@@ -4,9 +4,10 @@ Empezando con OPENCV
 
 Ir a terminal linux y ejecutar los siguientes comandos
 
-sudo apt install libopencv-dev python-opencv
-mkdir displayImage
-cd displayImage
+# sudo apt install cmake
+# sudo apt install libopencv-dev python-opencv
+# mkdir displayImage
+# cd displayImage
 
 crear un archivo llamado CMakeLits.txt y agregar lo siguiente
 
