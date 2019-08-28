@@ -1,0 +1,2 @@
+# openCV
+Empezando con OPENCV
