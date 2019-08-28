@@ -11,8 +11,9 @@ int main(int argc, char** argv) {
         return -1;
     }
 
+
     // Iteramos sobre todos los píxeles de la imagen
-    for(int r = 0; r < image.rows; r++) {
+    /*for(int r = 0; r < image.rows; r++) {
         // Obtenemos un puntero al comienzo de la fila r
         cv::Vec3b* ptr = image.ptr<cv::Vec3b>(r);
 		
@@ -21,11 +22,14 @@ int main(int argc, char** argv) {
             // Invertimos los valores azul y rojo del píxel
             ptr[c] = cv::Vec3b(ptr[c][2], ptr[c][1], ptr[c][0]);
         }
-    }
+    }*/
 
+    cv::Mat imagen_resize;
+    cv::resize(image,imagen_resize,cv::Size(1920,1080));
 
+    cv::imshow("imagen nueva", imagen_resize);
 
-    cv::imshow("I", image);
+    cv::imshow("imagen antigua", image);
     cv::waitKey();
 	
     return 0;
