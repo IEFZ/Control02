@@ -5,17 +5,17 @@ Empezando con OPENCV
 Ir a terminal linux y ejecutar los siguientes comandos
 
 sudo apt install libopencv-dev python-opencv
-mkdir Prueba
-cd Prueba
+mkdir displayImage
+cd displayImage
 
 crear un archivo llamado CMakeLits.txt y agregar lo siguiente
 
-cmake_minimum_required(VERSION 2.8)
-project( DisplayImage )
-find_package( OpenCV REQUIRED )
-add_executable( DisplayImage DisplayImage.cpp )
-target_link_libraries( DisplayImage ${OpenCV_LIBS} )
-volver a la terminar y ejecutar 
+# cmake_minimum_required(VERSION 2.8)
+# project( DisplayImage )
+# find_package( OpenCV REQUIRED )
+# add_executable( DisplayImage DisplayImage.cpp )
+# target_link_libraries( DisplayImage ${OpenCV_LIBS} )
+volver a la terminal y ejecutar (dentro de carpeta)
 # cmake .
 # make
 
