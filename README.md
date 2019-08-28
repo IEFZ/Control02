@@ -1,25 +1,40 @@
-# openCV
-Empezando con OPENCV
+Instalación de OpenCV
+=====================
 
 
-Ir a terminal linux y ejecutar los siguientes comandos
+Ir a terminal linux y ejecutar los siguientes comandos:
 
-# sudo apt install cmake
-# sudo apt install libopencv-dev python-opencv
-# mkdir displayImage
-# cd displayImage
 
-crear un archivo llamado CMakeLists.txt y agregar lo siguiente
+$ sudo apt install cmake
 
-# cmake_minimum_required(VERSION 2.8)
-# project( DisplayImage )
-# find_package( OpenCV REQUIRED )
-# add_executable( DisplayImage DisplayImage.cpp )
-# target_link_libraries( DisplayImage ${OpenCV_LIBS} )
-volver a la terminal y ejecutar (dentro de carpeta)
-# cmake .
-# make
+$ sudo apt install libopencv-dev python-opencv
 
-por ultimo ejecutar el programa .cpp de la siguiente forma, donde image.jpeg puede ser cualquier imagen
 
-# ./DisplayImage image.jpeg 
+Git clone
+====================
+
+
+En la terminal clonar el repositorio:
+
+
+$ git clonar https://github.com/IEFZ/openCV.git DisplayImage
+
+$ cd DisplayImage
+
+
+Ejecutar dentro de carpeta:
+
+
+$ cmake .
+
+$ make
+
+
+Ejercucion del programa
+====================
+
+
+Por ultimo ejecutar el programa .cpp de la siguiente forma, donde image.png puede ser cualquier imagen:
+
+
+$ ./DisplayImage image.png
