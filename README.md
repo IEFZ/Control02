@@ -15,11 +15,10 @@ project( DisplayImage )
 find_package( OpenCV REQUIRED )
 add_executable( DisplayImage DisplayImage.cpp )
 target_link_libraries( DisplayImage ${OpenCV_LIBS} )
-
 volver a la terminar y ejecutar 
-#cmake .
-#make
+# cmake .
+# make
 
 por ultimo ejecutar el programa .cpp de la siguiente forma, donde image.jpeg puede ser cualquier imagen
 
-#./DisplayImage image.jpeg 
+# ./DisplayImage image.jpeg 
