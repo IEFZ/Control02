@@ -21,6 +21,8 @@ $ git clone https://github.com/IEFZ/openCV.git Nuevo_Directorio
 
 $ cd Nuevo_Directorio
 
+$git checkout
+
 
 Ejecutar dentro de carpeta:
 
