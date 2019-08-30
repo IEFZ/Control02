@@ -9,7 +9,7 @@ Ir a terminal linux y ejecutar los siguientes comandos
 # mkdir Ejemplo
 # cd Ejemplo
 
-crear un archivo llamado CMakeLits.txt y agregar lo siguiente
+crear en el directorio, un archivo llamado CMakeLits.txt y agregar lo siguiente
 
 # cmake_minimum_required(VERSION 2.8)
 # project( Ejemplo )
