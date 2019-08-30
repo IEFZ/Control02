@@ -27,7 +27,7 @@ Ir a terminal linux y ejecutar los siguientes comandos:
 
 1. Clonar proyecto
 
-  $ git clone https://github.com/IEFZ/openCV.git
+  $ git clone https://github.com/IEFZ/Control02.git
 
   $ cd Control02
 
