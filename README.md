@@ -27,7 +27,7 @@ Ir a terminal linux y ejecutar los siguientes comandos:
 
 1. Clonar proyecto
 
-  $ git clone https://github.com/IEFZ/Control02.git
+  $ git clone https://github.com/IEFZ/openCV.git
 
   $ cd Control02
 
@@ -40,4 +40,4 @@ Ejecución del programa (Ubuntu):
 
   $ ./Control02 -e 2K -f /ruta/imagen_entrada.png -o /ruta/imagen_salida.png
 
-Donde 2K es la resolucion a obtener (puede ser FHD, 2K, 4K, 8K) y ruta es la ubicacion de la imagen en la entrada y en la salida es donde se quiere obtener la imagen redimensionada.
+Donde 2K es la resolucion a obtener (puede ser FHD, 2K, 4K, 8K, 16K) y ruta es la ubicacion de la imagen en la entrada y en la salida es donde se quiere obtener la imagen redimensionada.
