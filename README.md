@@ -17,9 +17,9 @@ Git clone
 En la terminal clonar el repositorio:
 
 
-$ git clone https://github.com/IEFZ/openCV.git DisplayImage
+$ git clone https://github.com/IEFZ/openCV.git Nuevo_Directorio
 
-$ cd DisplayImage
+$ cd Nuevo_Directorio
 
 
 Ejecutar dentro de carpeta:
@@ -37,7 +37,7 @@ Ejercucion del programa
 Por ultimo ejecutar el programa .cpp de la siguiente forma, donde image.png puede ser cualquier imagen:
 
 
-$ ./DisplayImage -e 2K -f /ruta/imagen_entrada.png -o /ruta/imagen_salida.png
+$ ./Control02 -e 2K -f /ruta/imagen_entrada.png -o /ruta/imagen_salida.png
 
 
 Donde ruta es la ubicacion de la imagen.

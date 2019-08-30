@@ -23,29 +23,84 @@ bool validar_argumentos(string arg_resolucion, string arg_entrada, string arg_sa
 
 void crear_nueva_imagen(string arg_resolucion,string arg_salida, cv::Mat image){
     cv::Mat imagen_resize;
+    cv::Mat imagen_final;
     bool resolucion_correcta = true;
     if (arg_resolucion.compare("FHD") == 0 || arg_resolucion.compare("fhd") == 0){ //Aumenta la resolucion de la imagen a Full HD
-        cv::resize(image,imagen_resize,cv::Size(1920,1080));
-        cv::imwrite(arg_salida,imagen_resize);
-        resolucion_correcta = false;
+		if(image.rows<image.cols){  	//verifica orientacion de imagen, vertical u horizontal
+			cv::resize(image,imagen_resize,cv::Size(1920,1080),0,0, INTER_LANCZOS4); // Cambiar resolucion de matriz usando algoritmo de LANCZOS
+			cv::fastNlMeansDenoisingColored(imagen_resize,imagen_final, 10,10.0, 7, 21) ; // Elimina el ruido de la imagen
+			cv::imwrite(arg_salida,imagen_final);
+			resolucion_correcta = false;
+		}
+		else{
+			cv::resize(image,imagen_resize,cv::Size(1080,1920),0,0, INTER_LANCZOS4); // Cambiar resolucion de matriz usando algoritmo de LANCZOS
+			cv::fastNlMeansDenoisingColored(imagen_resize,imagen_final,10,10.0, 7, 21) ; /* Elimina el ruido de la imagen 
+			h: parámetro que decide la fuerza del filtro. Un valor h más alto elimina el ruido mejor, pero también elimina detalles de la imagen. (10 está bien)
+			hForColorComponents: igual que h, pero solo para imágenes en color. (normalmente igual que h)
+			templateWindowSize: debe ser impar. (recomendado 7)
+			searchWindowSize: debe ser impar. (recomendado 21) */
+			cv::imwrite(arg_salida,imagen_final);
+			resolucion_correcta = false;
+		}
     }
     if (arg_resolucion.compare("2K") == 0 || arg_resolucion.compare("2k") == 0){ // Aumenta la resolucion de la imagen a 2K 
-        cv::resize(image,imagen_resize,cv::Size(2048,1080));
-        cv::imwrite(arg_salida,imagen_resize);
-        resolucion_correcta = false;
+	    if(image.rows<image.cols){  	//verifica orientacion de imagen, vertical u horizontal
+			cv::resize(image,imagen_resize,cv::Size(2048,1080),0,0, INTER_LANCZOS4); // Cambiar resolucion de matriz usando algoritmo de LANCZOS
+			cv::fastNlMeansDenoisingColored(imagen_resize,imagen_final, 10,10.0, 7, 21) ; // Elimina el ruido de la imagen
+			cv::imwrite(arg_salida,imagen_final);
+			resolucion_correcta = false;
+		}
+		else{
+			cv::resize(image,imagen_resize,cv::Size(1080,2048),0,0, INTER_LANCZOS4); // Cambiar resolucion de matriz usando algoritmo de LANCZOS
+			cv::fastNlMeansDenoisingColored(imagen_resize,imagen_final, 10, 10.0, 7, 21) ; // Elimina el ruido de la imagen
+			cv::imwrite(arg_salida,imagen_final);
+			resolucion_correcta = false;
+		}
     }
     if (arg_resolucion.compare("4K") == 0 || arg_resolucion.compare("4k") == 0){ // Aumenta la resolicion de la imagen a 4K
-        cv::resize(image,imagen_resize,cv::Size(4096,2160));
-        cv::imwrite(arg_salida,imagen_resize);
-        resolucion_correcta = false;
+		if(image.rows<image.cols){
+			cv::resize(image,imagen_resize,cv::Size(4096,2160),0,0, INTER_LANCZOS4); // Cambiar resolucion de matriz usando algoritmo de LANCZOS
+			cv::fastNlMeansDenoisingColored(imagen_resize,imagen_final, 20, 20.0, 7, 21) ; // Elimina el ruido de la imagen
+			cv::imwrite(arg_salida,imagen_final);
+			resolucion_correcta = false;
+		}
+		else{
+			cv::resize(image,imagen_resize,cv::Size(2160,4096),0,0, INTER_LANCZOS4); // Cambiar resolucion de matriz usando algoritmo de LANCZOS
+			cv::fastNlMeansDenoisingColored(imagen_resize,imagen_final, 20, 20.0, 7, 21) ; // Elimina el ruido de la imagen
+			cv::imwrite(arg_salida,imagen_final);
+			resolucion_correcta = false;
+		}
     }
     if (arg_resolucion.compare("8K") == 0 || arg_resolucion.compare("8k") == 0){ // Aumenta la resolucion de la imagen a 8K
-        cv::resize(image,imagen_resize,cv::Size(7680,4320));
-        cv::imwrite(arg_salida,imagen_resize);
-        resolucion_correcta = false;
+		if(image.rows<image.cols){
+			cv::resize(image,imagen_resize,cv::Size(7680,4320),0,0, INTER_LANCZOS4); // Cambiar resolucion de matriz usando algoritmo de LANCZOS
+			cv::fastNlMeansDenoisingColored(imagen_resize,imagen_final, 20, 40.0, 7, 21) ; // Elimina el ruido de la imagen
+			cv::imwrite(arg_salida,imagen_final);
+			resolucion_correcta = false;
+		}
+		else{
+			cv::resize(image,imagen_resize,cv::Size(4320,7680),0,0, INTER_LANCZOS4); // Cambiar resolucion de matriz usando algoritmo de LANCZOS
+			cv::fastNlMeansDenoisingColored(imagen_resize,imagen_final, 20, 40.0, 7, 21) ; // Elimina el ruido de la imagen
+			cv::imwrite(arg_salida,imagen_final);
+			resolucion_correcta = false;
+		}
+    }
+	if (arg_resolucion.compare("16K") == 0 || arg_resolucion.compare("16k") == 0){ // Aumenta la resolucion de la imagen a 16K
+		if(image.rows<image.cols){
+			cv::resize(image,imagen_resize,cv::Size(15360,8640),0,0, INTER_LANCZOS4); // Cambiar resolucion de matriz usando algoritmo de LANCZOS
+			cv::fastNlMeansDenoisingColored(imagen_resize,imagen_final, 10, 10.0, 7, 21) ; // Elimina el ruido de la imagen
+			cv::imwrite(arg_salida,imagen_final);
+			resolucion_correcta = false;
+		}
+		else{
+			cv::resize(image,imagen_resize,cv::Size(8640,15360),0,0, INTER_LANCZOS4); // Cambiar resolucion de matriz usando algoritmo de LANCZOS
+			cv::fastNlMeansDenoisingColored(imagen_resize,imagen_final, 10, 10.0, 7, 21) ; // Elimina el ruido de la imagen
+			cv::imwrite(arg_salida,imagen_final);
+			resolucion_correcta = false;
+		}
     }
     if (resolucion_correcta){
-        cout << "ATENCION: Especifique correctamente la resolucion (FHD, 2K, 4K, 8K)" << endl;
+        cout << "ATENCION: Especifique correctamente la resolucion (FHD, 2K, 4K, 8K, 16K)" << endl;
     }
 }
 
