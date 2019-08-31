@@ -1,3 +1,5 @@
+//Autores:Israel Flores, Cristóbal Morales, Nicolas Alarcon
+
 #include <iostream>
 #include <stdio.h>
 #include <opencv2/opencv.hpp>
