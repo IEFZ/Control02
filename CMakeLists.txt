@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project( Control02 )
+find_package( OpenCV REQUIRED )
+add_executable( Control02 Control02.cpp )
+target_link_libraries( Control02 ${OpenCV_LIBS} )
